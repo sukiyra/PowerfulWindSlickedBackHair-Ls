@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA333225-0471-4F38-B371-E50517B9AAF0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PowerfulWindSlickedBackHair</RootNamespace>
+    <AssemblyName>PowerfulWindSlickedBackHair</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>PowerfulWindSlickedBackHair.Program</StartupObject>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SoundTouch\SoundPlayer.cs" />
+    <Compile Include="SoundTouch\SoundTouch.cs" />
+    <Compile Include="SoundTouch\SoundTouchInterop32.cs" />
+    <Compile Include="SoundTouch\SoundTouchInterop64.cs" />
+    <Compile Include="SoundTouch\SoundTouchProfile.cs" />
+    <Compile Include="SoundTouch\SoundTouchSettings.cs" />
+    <Compile Include="SoundTouch\VarispeedSampleProvider.cs" />
+    <Compile Include="Tools\AnimalsShower.cs" />
+    <Compile Include="Tools\BWYukiShower.cs" />
+    <Compile Include="Tools\ClapYukiShower.cs" />
+    <Compile Include="Tools\CmdHelper.cs" />
+    <Compile Include="Tools\Mathf.cs" />
+    <Compile Include="Tools\PerlinNoise.cs" />
+    <Compile Include="Tools\RollingDogShower.cs" />
+    <Compile Include="Tools\WaveBirdShower.cs" />
+    <Compile Include="Tools\YukiState.cs" />
+    <Compile Include="Tracker.cs" />
+    <Compile Include="Windows\AhhhF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\AhhhF.Designer.cs">
+      <DependentUpon>AhhhF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BackgroundForm.Designer.cs">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BirdWaveF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BirdWaveF.Designer.cs">
+      <DependentUpon>BirdWaveF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BlackBirdF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BlackBirdF.Designer.cs">
+      <DependentUpon>BlackBirdF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BlueScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BlueScreen.Designer.cs">
+      <DependentUpon>BlueScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BWYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BWYukiForm.Designer.cs">
+      <DependentUpon>BWYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CabbageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\CabbageForm.Designer.cs">
+      <DependentUpon>CabbageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DogWalkF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\DogWalkF.Designer.cs">
+      <DependentUpon>DogWalkF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ErrorF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ErrorF.Designer.cs">
+      <DependentUpon>ErrorF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FightForm.Designer.cs">
+      <DependentUpon>FightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FloatWindowHelperF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FloatWindowHelperF.Designer.cs">
+      <DependentUpon>FloatWindowHelperF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FloatYukiWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FloatYukiWindow.Designer.cs">
+      <DependentUpon>FloatYukiWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HugeBlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\HugeBlow.Designer.cs">
+      <DependentUpon>HugeBlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\JumpingYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\JumpingYukiForm.Designer.cs">
+      <DependentUpon>JumpingYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LikeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\LikeForm.Designer.cs">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PigeonPeekF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\PigeonPeekF.Designer.cs">
+      <DependentUpon>PigeonPeekF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RollingDogF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\RollingDogF.Designer.cs">
+      <DependentUpon>RollingDogF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StaticPigeonF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\StaticPigeonF.Designer.cs">
+      <DependentUpon>StaticPigeonF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StaticYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\StaticYukiForm.Designer.cs">
+      <DependentUpon>StaticYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WalkingYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WalkingYukiForm.Designer.cs">
+      <DependentUpon>WalkingYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WhiteBirdF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WhiteBirdF.Designer.cs">
+      <DependentUpon>WhiteBirdF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\YukiClapF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\YukiClapF.Designer.cs">
+      <DependentUpon>YukiClapF.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\AhhhF.resx">
+      <DependentUpon>AhhhF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BackgroundForm.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BirdWaveF.resx">
+      <DependentUpon>BirdWaveF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BlackBirdF.resx">
+      <DependentUpon>BlackBirdF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BlueScreen.resx">
+      <DependentUpon>BlueScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BWYukiForm.resx">
+      <DependentUpon>BWYukiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\CabbageForm.resx">
+      <DependentUpon>CabbageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\DogWalkF.resx">
+      <DependentUpon>DogWalkF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ErrorF.resx">
+      <DependentUpon>ErrorF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\FightForm.resx">
+      <DependentUpon>FightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\HugeBlow.resx">
+      <DependentUpon>HugeBlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\JumpingYukiForm.resx">
+      <DependentUpon>JumpingYukiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LikeForm.resx">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PigeonPeekF.resx">
+      <DependentUpon>PigeonPeekF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\RollingDogF.resx">
+      <DependentUpon>RollingDogF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\StaticPigeonF.resx">
+      <DependentUpon>StaticPigeonF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\StaticYukiForm.resx">
+      <DependentUpon>StaticYukiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WalkingYukiForm.resx">
+      <DependentUpon>WalkingYukiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WhiteBirdF.resx">
+      <DependentUpon>WhiteBirdF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\YukiClapF.resx">
+      <DependentUpon>YukiClapF.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Assets\font.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\JumpDown.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\BlackBirdWave1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Error.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\DogWalk1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Ahhhh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\CabbageFull.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\BlackBird2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\BWYuki.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Fight1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\HugeBlow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\PigeonPeek.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\RollingDog.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GreyPigeon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Walk1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\WhiteBird1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\YukiClap.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Audio.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BlackBird1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BlackBirdWave2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\blue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BlueError.png" />
+    <Content Include="Assets\CabbageCut.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Cross.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\CuttingYuki.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\DogWalk2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fight2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fight3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\HugeBlow2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icon_collected.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\ic_painting_detail_like.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\ic_player_endpage_coined.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\JumpDownBlow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\JumpDownBlowBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\JumpUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\JumpUpBlow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\JumpUpBlowBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\PigeonPeek2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Walk2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Walk3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Walk4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\WhiteBird2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\WhiteBirdWave1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\WhiteBirdWave2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\WhitePigeon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\yellow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\YukiClap2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon.ico" />
+    <Content Include="SoundTouch.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SoundTouch_x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
